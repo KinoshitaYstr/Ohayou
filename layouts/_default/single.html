@@ -1,5 +1,19 @@
-{{ partial "header.html" . }}
-    <article>
-        {{ .Content }}
-    </article>
-{{ partial "footer.html" . }}
+<!DOCTYPE html>
+<html lang="en">
+{{ partial "head.html" . }}
+<body>
+    {{ partial "header.html" . }}
+    {{ if .Content }}
+        <article>
+            OK
+            {{ .Content }}
+        </article>
+    {{ else }}
+        <article>
+            Oh no
+        </article>
+    {{ end }}
+    {{ partial "article.html" . }}
+    {{ partial "footer.html" . }}
+</body>
+</html>
